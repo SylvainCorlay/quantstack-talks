@@ -1622,10 +1622,11 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                     <h2 style="font-size: 40px;">Adoption of xsimd</h2>
                     <div>
                         <ul style="font-size: 30px;">
-                            <li>Surprising high adoption of xsimd due to migration from boost.simd</li>
-                            <li>Pythran C++ transpiler migrating from boost.simd to xsimd</li>
+                            <li>Surprising high adoption of xsimd due to migration from boost.simd.</li>
+                            <li>Pythran C++ transpiler migrating from boost.simd to xsimd.</li>
                         </ul>
                     </div>
+                    <p>Expand on the boost.simd issue</p>
                     </div>
                 </section>
                 <section>
@@ -1683,7 +1684,7 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                                 </a>
                             </div>
                         </div>
-                        <div class="bio-card">
+                        <!-- <div class="bio-card">
                             <img class="card-photo" alt="Avatar picture" src="loic.jpg">
                             <p class="card-header">Loic Gouarin</p>
                             <div class="card-info">
@@ -1698,7 +1699,55 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                                     <em>@lgouarin</em>
                                 </a>
                             </div>
-                        </div>
+                        </div> -->
+                    </div>
+                </section>
+
+                <section>
+                    <h2>bq numerical libraries</h2>
+                    <img src="bq-numerics.png" width="50%"/>
+                </section>
+
+                <section>
+                    <h2>bq numerical libraries</h2>
+                    <ul style="max-width: 50%;">
+                        <li>bqfunc: financial closed-form expressions as numpy ufuncs</li>
+                        <li>bqpde1d and bqpde2d: financial PDE solvers</li>
+                        <li>bqopt: convex optimizer (interior point method)</li>
+                        <li>bqblas / nxsimd: linear algebra and SIMD acceleration backing bqopt and bqpde</li>
+                    </ul>
+                </section>
+
+                <section>
+                    <h2>Example use of bqopt</h2>
+                    <p>Approximated SVM:</p>
+                    <img src="bqopt-SVM.png" width="50%"/>
+                    <p>bqopt live demo</p>
+                </section>
+
+                <section>
+                    <h2>bq numerics migration to xtensor stack</h2>
+                    <div style="max-width: 50%; font-size: 24px; margin: auto;">
+                    <ul>
+                        <li>bqfunc:
+                            <ul>
+                                <li>xtensor makes it trivial to generate ufuncs.</li>
+                                <li>xsimd acceleration will make bqfunc ~4x faster.</li>
+                            </ul>
+                        </li>
+                        <li>bqpde [1d|2d]:
+                            <ul>
+                                <li>xtensor will simplify the multi-payoff resolution, and numpy bindings.</li>
+                                <li>xsimd acceleration will make forward PDE resolution significantly faster.</li>
+                            </ul>
+                        </li>
+                        <li>bqopt
+                            <ul>
+                                <li>xtensor will improve the pure C++ API and simplify numpy bindings.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Moreover, migration to xtensor will allow dropping bqblas and nxsimd.</p>
                     </div>
                 </section>
             </div>
