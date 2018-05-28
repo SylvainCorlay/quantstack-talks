@@ -286,6 +286,7 @@
                             <td>ipyvolume</td><td><img alt="xvolume" src="xvolume.svg" style="height: 30px;"/> (upcoming)</td>
                         </tr>
                     </table>
+                    <p style="font-size: 20px;">Note: mention blog post on <a href="https://blog.jupyter.org/interpreted-c-for-gis-with-jupyter-ae191bc6fb8e">Interpreted C++ for GIS with Jupyter</a>.</p>
                 </section>
 
                 <section>
@@ -1731,7 +1732,7 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                     <ul>
                         <li>bqfunc:
                             <ul>
-                                <li>xtensor makes it trivial to generate ufuncs.</li>
+                                <li>xtensor's automatic generation of ufuncs will simplify the package a lot.</li>
                                 <li>xsimd acceleration will make bqfunc ~4x faster.</li>
                             </ul>
                         </li>
@@ -1747,7 +1748,7 @@ void mean(const vector_type&amp; a, const vector_type&amp; b, vector_type&amp; r
                             </ul>
                         </li>
                     </ul>
-                    <p>Moreover, migration to xtensor will allow dropping bqblas and nxsimd.</p>
+                    <p>Finally, migration to xtensor will allow to expose these libraries transparently to R and Julia and other languages that have xtensor bindings.</p>
                     </div>
                 </section>
             </div>
